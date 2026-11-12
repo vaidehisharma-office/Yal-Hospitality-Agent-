@@ -20,3 +20,8 @@ class IntentResult(BaseModel):
     clarification_question: str | None = None
     multiple_requests_detected: bool = False
     rationale: str = Field(default="No rationale provided.", max_length=200)
+
+
+class AgentRequest(BaseModel):
+    guest_message: str
+    room_number: int | None = Field(default=None, gt=0)
